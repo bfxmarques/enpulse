@@ -1,0 +1,182 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Enpulse Design System - Modern Fuel Company */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap');
+
+@layer base {
+  :root {
+    /* Brand Colors - Modern Green & Graphite */
+    --background: 0 0% 100%;
+    --foreground: 220 20% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 20% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 20% 15%;
+
+    /* Modern Teal Green - Primary Brand */
+    --primary: 166 72% 35%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Dark Graphite - Secondary */
+    --secondary: 220 15% 20%;
+    --secondary-foreground: 0 0% 100%;
+
+    /* Muted Surfaces */
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 10% 45%;
+
+    /* Accent - Lighter Teal */
+    --accent: 166 50% 94%;
+    --accent-foreground: 166 72% 25%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 166 72% 35%;
+
+    --radius: 0.5rem;
+
+    /* Extended Palette */
+    --graphite: 220 15% 15%;
+    --graphite-light: 220 12% 25%;
+    --green-dark: 166 72% 28%;
+    --green-light: 166 50% 45%;
+    --cream: 40 33% 97%;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(166 72% 35% / 0.9), hsl(166 72% 25% / 0.95));
+    --gradient-dark: linear-gradient(180deg, hsl(220 15% 15%), hsl(220 15% 10%));
+    
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 hsl(220 15% 15% / 0.05);
+    --shadow-md: 0 4px 6px -1px hsl(220 15% 15% / 0.1), 0 2px 4px -2px hsl(220 15% 15% / 0.1);
+    --shadow-lg: 0 10px 15px -3px hsl(220 15% 15% / 0.1), 0 4px 6px -4px hsl(220 15% 15% / 0.1);
+    --shadow-xl: 0 20px 25px -5px hsl(220 15% 15% / 0.1), 0 8px 10px -6px hsl(220 15% 15% / 0.1);
+    --shadow-glow: 0 0 40px hsl(166 72% 35% / 0.2);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 166 72% 35%;
+  }
+
+  .dark {
+    --background: 220 15% 10%;
+    --foreground: 0 0% 98%;
+
+    --card: 220 15% 13%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 220 15% 13%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 166 60% 45%;
+    --primary-foreground: 220 15% 10%;
+
+    --secondary: 220 12% 25%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 220 12% 20%;
+    --muted-foreground: 220 10% 60%;
+
+    --accent: 166 40% 20%;
+    --accent-foreground: 166 60% 60%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 12% 20%;
+    --input: 220 12% 20%;
+    --ring: 166 60% 45%;
+    
+    --sidebar-background: 220 15% 10%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 166 60% 45%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 12% 18%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 220 12% 20%;
+    --sidebar-ring: 166 60% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    @apply font-bold tracking-tight;
+  }
+}
+
+@layer components {
+  .section-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-green-light;
+  }
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+
+  .animate-slide-in-left {
+    animation: slideInLeft 0.6s ease-out forwards;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes fadeInUp {
+    from { 
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to { 
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideInLeft {
+    from { 
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    to { 
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+}
